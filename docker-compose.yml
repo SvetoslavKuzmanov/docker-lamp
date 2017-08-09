@@ -12,3 +12,23 @@ services:
         - ./htdocs:/usr/local/apache2/htdocs
         - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
         - ./apache/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+  mysql:
+    image: mysql
+    restart: always
+    volumes:
+       - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: p4ssw0rd!
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+      - mysql
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: p4ssw0rd!
+volumes:
+  db_data:
