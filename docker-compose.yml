@@ -1,0 +1,9 @@
+version: '3'
+services:
+  apache:
+    image: library/httpd
+    restart: always
+    ports:
+        - "80:80"
+    volumes:
+        - ./htdocs:/usr/local/apache2/htdocs
