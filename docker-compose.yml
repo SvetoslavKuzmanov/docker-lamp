@@ -13,7 +13,7 @@ services:
         - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
         - ./apache/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
   php:
-    image: php:fpm
+    build: ./php
     ports:
         - "9000:9000"
     links:
