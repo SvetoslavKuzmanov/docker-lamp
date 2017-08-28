@@ -5,8 +5,6 @@ services:
     restart: always
     ports:
         - "80:80"
-#   extra_hosts:
-#       - "example.dev:127.0.0.1"
     volumes:
         - ./htdocs:/usr/local/apache2/htdocs
         - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
