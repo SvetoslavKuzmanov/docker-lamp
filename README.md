@@ -38,7 +38,7 @@ If you do not need to run any command line tools manually like composer, it is s
 ### 3. Adding Virtual Hosts
 
 Open the `httpd-vhosts` file in the apache folder and add your vhosts configuration there.
-In the `docker-compose.yml` under the apache service section edit the `extra_hosts` array to inplude the vhost that you just added.
+In the `docker-compose.override.yml` under the apache service section edit the `extra_hosts` array to include the vhost that you just added.
 Add the vhost to the `/etc/hosts` file on your machine.
 Restart all containers:
 
