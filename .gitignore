@@ -2,3 +2,5 @@
 *.DS_Store
 htdocs/*
 htdocs/index.php
+httpd-vhosts.conf
+docker-compose.override.yml

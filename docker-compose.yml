@@ -8,7 +8,6 @@ services:
     volumes:
         - ./htdocs:/usr/local/apache2/htdocs
         - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
-        - ./apache/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
   php:
     build: ./php
     ports:

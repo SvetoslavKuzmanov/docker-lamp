@@ -1,0 +1,7 @@
+version: '3'
+services:
+  apache:
+    extra_hosts:
+      - "example.dev:127.0.0.1"
+    volumes:
+      - ./apache/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf

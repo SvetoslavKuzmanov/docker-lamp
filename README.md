@@ -37,8 +37,8 @@ If you do not need to run any command line tools manually like composer, it is s
 
 ### 3. Adding Virtual Hosts
 
-Open the `httpd-vhosts` file in the apache folder and add your vhosts configuration there.
-In the `docker-compose.override.yml` under the apache service section edit the `extra_hosts` array to include the vhost that you just added.
+Copy the `httpd-vhosts.default.conf` file in the apache folder to `httpd-vhosts.conf` in the same folder and add your vhosts configuration there, following the example left. Don't forget the `ProxyPassMatch` directive that allows the php fpm to work.
+Copy the `docker-compose.override.default.yml` to `docker-compose.override.yml` under the apache service section edit the `extra_hosts` array to include the vhost that you just added.
 Add the vhost to the `/etc/hosts` file on your machine.
 Restart all containers:
 
