@@ -2,6 +2,7 @@ version: '3'
 services:
   apache:
     image: library/httpd
+    container_name: apache
     restart: always
     ports:
         - "80:80"
@@ -10,6 +11,7 @@ services:
         - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
   php:
     build: ./php
+    container_name: php
     ports:
         - "9000:9000"
     links:
@@ -18,6 +20,7 @@ services:
         - ./htdocs:/usr/local/apache2/htdocs
   mysql:
     image: mysql
+    container_name: mysql
     restart: always
     volumes:
        - db_data:/var/lib/mysql
@@ -25,6 +28,7 @@ services:
       MYSQL_ROOT_PASSWORD: p4ssw0rd!
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
     restart: always
     links:
       - mysql
